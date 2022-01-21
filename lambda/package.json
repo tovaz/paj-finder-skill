@@ -1,16 +1,38 @@
 {
-  "name": "hello-world",
-  "version": "1.2.0",
-  "description": "alexa utility for quickly building skills",
+  "name": "alexa-typescript-lambda-helloworld",
+  "version": "1.0.0",
+  "description": "Alexa HelloWorld example with TypeScript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf lambda",
+    "compile": "tsc --build tsconfig.json --pretty",
+    "build-final": "cpy package.json ./lambda/ --overwrite && cd lambda/ && npm install --production",
+    "test": "echo \"No test specified yet\" && exit 0",
+    "lint-check": "gts check",
+    "lint-clean": "gts clean",
+    "lint-fix": "gts fix",
+    "build": "npm run clean && npm run test && npm run lint-check && npm run compile && npm run build-final"
   },
-  "author": "Amazon Alexa",
-  "license": "Apache License",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xavidop/alexa-typescript-lambda-helloworld.git"
+  },
+  "author": "Xavier Portilla Edo",
+  "license": "Apache-2.0",
   "dependencies": {
     "ask-sdk-core": "^2.7.0",
     "ask-sdk-model": "^1.19.0",
-    "aws-sdk": "^2.326.0"
+    "aws-sdk": "^2.326.0",
+    "i18next": "^15.0.5",
+    "i18next-sprintf-postprocessor": "^0.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^10.10.0",
+    "@types/i18next-sprintf-postprocessor": "^0.2.0",
+    "typescript": "^3.0.2",
+    "cpy-cli": "^3.1.0",
+    "rimraf": "^3.0.0",
+    "ts-node": "^7.0.1",
+    "gts": "^1.1.2"
   }
 }
