@@ -40,6 +40,17 @@
           "keywords": [],
           "name": "Paj finder skill",
           "summary": "Sample Short Description"
+        },
+        "es-ES": {
+          "description": "Ejemplo descripcion",
+          "examplePhrases": [
+            "Alexa open hello world",
+            "hello",
+            "help"
+          ],
+          "keywords": [],
+          "name": "Paj finder skill",
+          "summary": "Sample Short Description"
         }
       },
       "testingInstructions": "Sample Testing Instructions."

@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "change me",
+      "invocationName": "paj finder skill",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
