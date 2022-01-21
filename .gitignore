@@ -2,5 +2,6 @@ ask-resources.json
 .ask
 .vscode
 lambda/node_modules
+lambda/package-lock.json
 package-lock.json
 node_modules

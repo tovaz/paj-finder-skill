@@ -13,11 +13,7 @@
     "lint-fix": "gts fix",
     "build": "npm run clean && npm run test && npm run lint-check && npm run compile && npm run build-final"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/xavidop/alexa-typescript-lambda-helloworld.git"
-  },
-  "author": "Xavier Portilla Edo",
+  "author": "William S. Valdez",
   "license": "Apache-2.0",
   "dependencies": {
     "ask-sdk-core": "^2.7.0",
