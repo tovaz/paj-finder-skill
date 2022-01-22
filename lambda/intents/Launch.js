@@ -12,7 +12,8 @@ exports.Launch = {
         return helpers_1.IsType(handlerInput, constants_1.RequestTypes.Launch);
     },
     handle(handlerInput) {
-        const speechText = i18next_1.default.t(constants_1.Strings.WELCOME_MSG);
+        const speechText = i18next_1.default.t('WELCOME_MSG');
+        console.log('Speech Text', speechText);
         return handlerInput.responseBuilder
             .speak(speechText)
             .reprompt(speechText)

@@ -6,12 +6,14 @@
   "scripts": {
     "clean": "rimraf lambda",
     "compile": "tsc --build tsconfig.json --pretty",
-    "build-final": "cpy package.json ./lambda/ --overwrite && cd lambda/ && npm install --production",
+    "build-final": "cpy package.json ./lambda/ --overwrite && cpy 'local-debugger.js' ./lambda/ --overwrite && cd lambda/ &&  npm install --production",
     "test": "echo \"No test specified yet\" && exit 0",
     "lint-check": "gts check",
     "lint-clean": "gts clean",
     "lint-fix": "gts fix",
-    "build": "npm run clean && npm run test && npm run lint-check && npm run compile && npm run build-final"
+    "deploy": "npm run clean && npm run test && npm run lint-check && npm run compile && npm run build-final",
+    "build": "npm run clean && npm run compile",
+    "postbuild": "cpy 'local-debugger.js' ./lambda/ --overwrite && cpy package.json ./lambda/ --overwrite && cd lambda/"
   },
   "author": "William S. Valdez",
   "license": "Apache-2.0",

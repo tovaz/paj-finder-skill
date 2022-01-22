@@ -7,9 +7,9 @@ export const Launch: RequestHandler = {
   canHandle(handlerInput: HandlerInput) {
     return IsType(handlerInput, RequestTypes.Launch);
   },
-  handle(handlerInput: HandlerInput) {
-    const speechText = i18n.t(Strings.WELCOME_MSG);
-
+  handle(handlerInput: any) {
+    const speechText = i18n.t('WELCOME_MSG');
+    console.log('Speech Text', speechText);
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)

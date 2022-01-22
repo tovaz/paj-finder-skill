@@ -10,7 +10,8 @@
     "outDir": "lambda/",
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "allowSyntheticDefaultImports": true      
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true
 }, 
     "include": [
       "./src/**/*.ts"

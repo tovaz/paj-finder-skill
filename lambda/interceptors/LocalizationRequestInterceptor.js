@@ -25,21 +25,42 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.LocalizationRequestInterceptor = void 0;
 const sprintf = __importStar(require("i18next-sprintf-postprocessor"));
 const i18next_1 = __importDefault(require("i18next"));
-const en_1 = require("../assets/translations/en");
-const es_1 = require("../assets/translations/es");
-const de_1 = require("../assets/translations/de");
-// import { strings } from '../utilities/strings';
+const en_json_1 = __importDefault(require("./../assets/translations/en.json"));
+const es_json_1 = __importDefault(require("./../assets/translations/es.json"));
+const de_json_1 = __importDefault(require("./../assets/translations/de.json"));
 /**
  * Adds translation functions to the RequestAttributes.
  */
 exports.LocalizationRequestInterceptor = {
     process(handlerInput) {
-        i18next_1.default.use(sprintf).init({
+        const resources = {
+            en: { translation: en_json_1.default },
+            es: { translation: es_json_1.default },
+            de: { translation: de_json_1.default },
+        };
+        const localizationClient = i18next_1.default.use(sprintf).init({
             lng: handlerInput.requestEnvelope.request.locale,
-            // overloadTranslationOptionHandler: sprintf.overloadTranslationOptionHandler,
+            overloadTranslationOptionHandler: sprintf.overloadTranslationOptionHandler,
             fallbackLng: 'en',
-            resources: { de: de_1.de, en: en_1.en, es: es_1.es },
+            resources,
             returnObjects: true,
         });
+        // localizationClient.localize = () => {
+        //   const args = arguments;
+        //   const values = [];
+        //   for (let i = 1; i < args.length; i++) {
+        //     values.push(args[i]);
+        //   }
+        //   const value = i18n.t(args[0], {
+        //     returnObjects: true,
+        //     postProcess: 'sprintf',
+        //     sprintf: values,
+        //   });
+        //   if (Array.isArray(value)) {
+        //     return value[Math.floor(Math.random() * value.length)];
+        //   } else {
+        //     return value;
+        //   }
+        // };
     },
 };
