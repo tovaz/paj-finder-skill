@@ -1,6 +1,6 @@
 import { RequestHandler, HandlerInput } from 'ask-sdk-core';
-import { IsIntent } from '../utilities/helpers';
-import { IntentTypes, Strings } from '../utilities/constants';
+import { IsIntent } from '../../utilities/helpers';
+import { IntentTypes, Strings } from '../../utilities/constants';
 import i18n from 'i18next';
 
 export const Fallback: RequestHandler = {

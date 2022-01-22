@@ -1,6 +1,6 @@
 import { RequestHandler, getIntentName, HandlerInput } from 'ask-sdk-core';
-import { IsType } from '../utilities/helpers';
-import { Strings, RequestTypes } from '../utilities/constants';
+import { IsType } from '../../utilities/helpers';
+import { Strings, RequestTypes } from '../../utilities/constants';
 import i18n from 'i18next';
 
 export const Reflector: RequestHandler = {

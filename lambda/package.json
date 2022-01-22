@@ -19,10 +19,13 @@
   "license": "Apache-2.0",
   "dependencies": {
     "ask-sdk-core": "^2.7.0",
+    "ask-sdk-dynamodb-persistence-adapter": "^2.11.0",
     "ask-sdk-model": "^1.19.0",
     "aws-sdk": "^2.326.0",
+    "axios": "^0.25.0",
     "i18next": "^15.0.5",
-    "i18next-sprintf-postprocessor": "^0.2.2"
+    "i18next-sprintf-postprocessor": "^0.2.2",
+    "typedi": "^0.10.0"
   },
   "devDependencies": {
     "@types/node": "^10.10.0",

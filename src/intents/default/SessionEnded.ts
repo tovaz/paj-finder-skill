@@ -1,14 +1,14 @@
 import { RequestHandler, HandlerInput } from 'ask-sdk-core';
-import { IsIntent } from '../utilities/helpers';
-import { IntentTypes, Strings } from '../utilities/constants';
+import { IsType } from '../../utilities/helpers';
+import { Strings, RequestTypes } from '../../utilities/constants';
 import i18n from 'i18next';
 
-export const HelloWorld: RequestHandler = {
+export const SessionEnded: RequestHandler = {
   canHandle(handlerInput: HandlerInput) {
-    return IsIntent(handlerInput, IntentTypes.HelloWorld);
+    return IsType(handlerInput, RequestTypes.SessionEnded);
   },
   handle(handlerInput: HandlerInput) {
-    const speechText = i18n.t(Strings.HELLO_MSG);
+    const speechText = i18n.t(Strings.GOODBYE_MSG);
 
     return handlerInput.responseBuilder
       .speak(speechText)

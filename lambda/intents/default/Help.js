@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Help = void 0;
-const helpers_1 = require("../utilities/helpers");
-const constants_1 = require("../utilities/constants");
+const helpers_1 = require("../../utilities/helpers");
+const constants_1 = require("../../utilities/constants");
 const i18next_1 = __importDefault(require("i18next"));
 exports.Help = {
     canHandle(handlerInput) {

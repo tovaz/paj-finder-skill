@@ -38,7 +38,7 @@ exports.LocalizationRequestInterceptor = {
             es: { translation: es_json_1.default },
             de: { translation: de_json_1.default },
         };
-        const localizationClient = i18next_1.default.use(sprintf).init({
+        i18next_1.default.use(sprintf).init({
             lng: handlerInput.requestEnvelope.request.locale,
             overloadTranslationOptionHandler: sprintf.overloadTranslationOptionHandler,
             fallbackLng: 'en',

@@ -11,7 +11,8 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "allowSyntheticDefaultImports": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "experimentalDecorators": true
 }, 
     "include": [
       "./src/**/*.ts"

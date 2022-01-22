@@ -16,7 +16,7 @@ export const LocalizationRequestInterceptor: RequestInterceptor = {
       de: { translation: de },
     };
 
-    const localizationClient: any = i18n.use(sprintf).init({
+    i18n.use(sprintf).init({
       lng: handlerInput.requestEnvelope.request.locale,
       overloadTranslationOptionHandler:
         sprintf.overloadTranslationOptionHandler,

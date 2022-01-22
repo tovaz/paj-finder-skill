@@ -21,20 +21,23 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.handler = void 0;
 const Alexa = __importStar(require("ask-sdk-core"));
-const Launch_1 = require("./intents/Launch");
-const Help_1 = require("./intents/Help");
-const Stop_1 = require("./intents/Stop");
-const Reflector_1 = require("./intents/Reflector");
-const Fallback_1 = require("./intents/Fallback");
-const HelloWorld_1 = require("./intents/HelloWorld");
+const Launch_1 = require("./intents/default/Launch");
+const Help_1 = require("./intents/default/Help");
+const Stop_1 = require("./intents/default/Stop");
+const Reflector_1 = require("./intents/default/Reflector");
+const Fallback_1 = require("./intents/default/Fallback");
+const CustomerIntent_1 = require("./intents/customer/CustomerIntent");
 const ErrorProcessor_1 = require("./errors/ErrorProcessor");
-const SessionEnded_1 = require("./intents/SessionEnded");
+const SessionEnded_1 = require("./intents/default/SessionEnded");
 const LocalizationRequestInterceptor_1 = require("./interceptors/LocalizationRequestInterceptor");
+const SessionRequestInterceptor_1 = require("./interceptors/SessionRequestInterceptor");
+//_ Enable to use dynamon db
+//import { PersistentAdapter } from './services/StorageService';
 exports.handler = Alexa.SkillBuilders.custom()
-    .addRequestHandlers(
-// Default intents
-Launch_1.Launch, HelloWorld_1.HelloWorld, Help_1.Help, Stop_1.Stop, SessionEnded_1.SessionEnded, Reflector_1.Reflector, Fallback_1.Fallback)
+    //_ Enable to use dynamon DB
+    //.withPersistenceAdapter(PersistentAdapter)
+    .addRequestHandlers(Launch_1.Launch, CustomerIntent_1.CustomerIntent, Help_1.Help, Stop_1.Stop, SessionEnded_1.SessionEnded, Reflector_1.Reflector, Fallback_1.Fallback)
     .addErrorHandlers(ErrorProcessor_1.ErrorProcessor)
-    .addRequestInterceptors(LocalizationRequestInterceptor_1.LocalizationRequestInterceptor)
+    .addRequestInterceptors(LocalizationRequestInterceptor_1.LocalizationRequestInterceptor, SessionRequestInterceptor_1.SessionRequestInterceptor)
     .lambda();
 //# sourceMappingURL=index.js.map
