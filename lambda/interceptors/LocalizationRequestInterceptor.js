@@ -45,22 +45,5 @@ exports.LocalizationRequestInterceptor = {
             resources,
             returnObjects: true,
         });
-        // localizationClient.localize = () => {
-        //   const args = arguments;
-        //   const values = [];
-        //   for (let i = 1; i < args.length; i++) {
-        //     values.push(args[i]);
-        //   }
-        //   const value = i18n.t(args[0], {
-        //     returnObjects: true,
-        //     postProcess: 'sprintf',
-        //     sprintf: values,
-        //   });
-        //   if (Array.isArray(value)) {
-        //     return value[Math.floor(Math.random() * value.length)];
-        //   } else {
-        //     return value;
-        //   }
-        // };
     },
 };
