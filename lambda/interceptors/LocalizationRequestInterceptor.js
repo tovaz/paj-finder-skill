@@ -25,7 +25,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.LocalizationRequestInterceptor = void 0;
 const sprintf = __importStar(require("i18next-sprintf-postprocessor"));
 const i18next_1 = __importDefault(require("i18next"));
-const strings_1 = require("../utilities/strings");
+const en_1 = require("../assets/translations/en");
+const es_1 = require("../assets/translations/es");
+const de_1 = require("../assets/translations/de");
+// import { strings } from '../utilities/strings';
 /**
  * Adds translation functions to the RequestAttributes.
  */
@@ -33,8 +36,9 @@ exports.LocalizationRequestInterceptor = {
     process(handlerInput) {
         i18next_1.default.use(sprintf).init({
             lng: handlerInput.requestEnvelope.request.locale,
-            overloadTranslationOptionHandler: sprintf.overloadTranslationOptionHandler,
-            resources: strings_1.strings,
+            // overloadTranslationOptionHandler: sprintf.overloadTranslationOptionHandler,
+            fallbackLng: 'en',
+            resources: { de: de_1.de, en: en_1.en, es: es_1.es },
             returnObjects: true,
         });
     },

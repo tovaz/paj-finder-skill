@@ -1,7 +1,7 @@
 {
-  "name": "alexa-typescript-lambda-helloworld",
-  "version": "1.0.0",
-  "description": "Alexa HelloWorld example with TypeScript",
+  "name": "paj-finder-skill",
+  "version": "0.0.1",
+  "description": "Paj finder skill Node|Typescript",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf lambda",

@@ -16,7 +16,7 @@ exports.Launch = {
         return handlerInput.responseBuilder
             .speak(speechText)
             .reprompt(speechText)
-            .withSimpleCard(i18next_1.default.t(constants_1.Strings.SKILL_NAME), speechText)
+            .withSimpleCard(i18next_1.default.t('WELCOME_MSG'), speechText)
             .getResponse();
     },
 };

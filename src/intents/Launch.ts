@@ -13,7 +13,7 @@ export const Launch: RequestHandler = {
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard(i18n.t(Strings.SKILL_NAME), speechText)
+      .withSimpleCard(i18n.t('WELCOME_MSG'), speechText)
       .getResponse();
   },
 };
