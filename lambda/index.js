@@ -37,3 +37,4 @@ Launch_1.Launch, HelloWorld_1.HelloWorld, Help_1.Help, Stop_1.Stop, SessionEnded
     .addErrorHandlers(ErrorProcessor_1.ErrorProcessor)
     .addRequestInterceptors(LocalizationRequestInterceptor_1.LocalizationRequestInterceptor)
     .lambda();
+//# sourceMappingURL=index.js.map

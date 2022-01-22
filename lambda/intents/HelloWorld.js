@@ -19,3 +19,4 @@ exports.HelloWorld = {
             .getResponse();
     },
 };
+//# sourceMappingURL=HelloWorld.js.map

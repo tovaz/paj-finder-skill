@@ -19,3 +19,4 @@ exports.Stop = {
             .getResponse();
     },
 };
+//# sourceMappingURL=Stop.js.map

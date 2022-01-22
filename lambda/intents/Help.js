@@ -20,3 +20,4 @@ exports.Help = {
             .getResponse();
     },
 };
+//# sourceMappingURL=Help.js.map
