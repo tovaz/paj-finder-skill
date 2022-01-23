@@ -5,5 +5,5 @@ lambda/node_modules
 lambda/package-lock.json
 package-lock.json
 node_modules
-.map
-.DS_Store
+*.map
+*.DS_Store
