@@ -36,9 +36,19 @@
         },
         {
           "name": "DeviceIntent",
-          "slots": [],
+          "slots": [
+              {
+                  "name": "DEVICE_NAME",
+                  "type": "AMAZON.Book",
+                  "multipleValues": {
+                      "enabled": true
+                  }
+              }
+          ],
           "samples": [
-            "where is my "
+              "last location of {DEVICE_NAME}",
+              "what is the last location of {DEVICE_NAME}",
+              "where is {DEVICE_NAME}"
           ]
         },
         {
