@@ -5,23 +5,23 @@ export class SessionService {
     
     constructor(public hi: HandlerInput){ }
 
-    public session(): Session{
+    session(): Session{
         return this.hi.requestEnvelope.session;
     }
 
-    public attributes(){
+    attributes(){
         return this.hi.attributesManager.getSessionAttributes();
     }
 
-    public user(): User{
+    user(): User{
         return this.session().user;
     }
 
-    public accessToken(): string{
+    accessToken(): string{
         return this.hi.requestEnvelope.session.user.accessToken;
     }
 
-    public attributesManager():AttributesManager{
+    attributesManager():AttributesManager{
         return this.hi.attributesManager;
     }
 }

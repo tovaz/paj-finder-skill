@@ -12,20 +12,20 @@ export class CustomerService extends HttpHelper{
         super(hi);
     }
 
-    public async getCustomerData(){
-        return await axios.get('/api/customer/').then( (res:any) => {
-            if (res.status == 200)
+    async getCustomerData(){
+        return axios.get('/api/customer/').then( (res:any) => {
+            if (res.status === 200)
                 return res.data.success;
         }).catch( (error:any) => {
             console.log(error);
         });
     }
 
-    public async getDevices(){
-        return await axios.get('/api/device').then( (res:any) => {
+    async getDevices(){
+        return axios.get('/api/device').then( (res:any) => {
             console.log('DEVICES RESPONSED');
             console.log(res);
-            if (res.status == 200)
+            if (res.status === 200) 
                 return res.data.success;
         }).catch( (error:any) => {
             console.log(error);

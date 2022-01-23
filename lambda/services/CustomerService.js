@@ -9,18 +9,18 @@ class CustomerService extends HttpHelper_1.HttpHelper {
         this.hi = hi;
     }
     async getCustomerData() {
-        return await axios.get('/api/customer/').then((res) => {
-            if (res.status == 200)
+        return axios.get('/api/customer/').then((res) => {
+            if (res.status === 200)
                 return res.data.success;
         }).catch((error) => {
             console.log(error);
         });
     }
     async getDevices() {
-        return await axios.get('/api/device').then((res) => {
+        return axios.get('/api/device').then((res) => {
             console.log('DEVICES RESPONSED');
             console.log(res);
-            if (res.status == 200)
+            if (res.status === 200)
                 return res.data.success;
         }).catch((error) => {
             console.log(error);

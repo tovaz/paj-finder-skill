@@ -9,6 +9,7 @@
       "variable-name": false,
       "interface-name": false,
       "no-any": false,
+      "curly": false,
       "prettier/prettier": [   
         "warn",   {
           "endOfLine": "auto"
