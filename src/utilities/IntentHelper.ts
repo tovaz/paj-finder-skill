@@ -1,5 +1,5 @@
 import { HandlerInput } from 'ask-sdk-core';
-import { RequestTypes } from './constants';
+import { RequestTypes } from './Types';
 
 /**
  * Checks if the request matches any of the given intents.

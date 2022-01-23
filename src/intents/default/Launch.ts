@@ -1,6 +1,6 @@
 import { RequestHandler, HandlerInput } from 'ask-sdk-core';
-import { RequestTypes, Strings } from '../../utilities/constants';
-import { IsType } from '../../utilities/helpers';
+import { RequestTypes } from '../../utilities/Types';
+import { IsType } from '../../utilities/IntentHelper';
 import i18n from 'i18next';
 import { SessionService } from '../../services/SessionService';
 import { CustomerService } from '../../services/CustomerService';
@@ -15,7 +15,7 @@ export const Launch: RequestHandler = {
     const cusService = new CustomerService(handlerInput);
     const storage = new StorageService(handlerInput);
 
-    const customer = await cusService.getUserData();
+    const customer = await cusService.getCustomerData();
     storage.save('customer', customer);
 
     const speechText =  i18n.t('WELCOME_MSG');

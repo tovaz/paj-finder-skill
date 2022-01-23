@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IsType = exports.IsIntent = void 0;
-const constants_1 = require("./constants");
+const Types_1 = require("./Types");
 /**
  * Checks if the request matches any of the given intents.
  *
@@ -9,7 +9,7 @@ const constants_1 = require("./constants");
  * @param intents
  */
 function IsIntent(handlerInput, ...intents) {
-    if (handlerInput.requestEnvelope.request.type === constants_1.RequestTypes.Intent) {
+    if (handlerInput.requestEnvelope.request.type === Types_1.RequestTypes.Intent) {
         for (let i = 0; i < intents.length; i++) {
             if (handlerInput.requestEnvelope.request.intent.name === intents[i]) {
                 return true;
@@ -34,4 +34,4 @@ function IsType(handlerInput, ...types) {
     return false;
 }
 exports.IsType = IsType;
-//# sourceMappingURL=helpers.js.map
+//# sourceMappingURL=IntentHelper.js.map

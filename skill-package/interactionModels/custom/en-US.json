@@ -20,12 +20,18 @@
           "slots": [],
           "samples": [
             "hello",
-            "how are you",
-            "say hi world",
-            "say hi",
-            "hi",
-            "say hello world",
-            "say hello"
+            "hi"
+          ]
+        },
+        {
+          "name": "DevicesIntent",
+          "slots": [],
+          "samples": [
+            "show my devices",
+            "my devices",
+            "where are my devices",
+            "what is the last location of my devices",
+            "last locations"
           ]
         },
         {

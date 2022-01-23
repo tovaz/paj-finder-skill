@@ -1,5 +1,4 @@
 import { ErrorHandler, HandlerInput } from 'ask-sdk-core';
-import { Strings } from '../utilities/constants';
 import i18n from 'i18next';
 
 /**
@@ -14,7 +13,7 @@ export const ErrorProcessor: ErrorHandler = {
     console.log('Error handled: ${error.message}');
 
     return handlerInput.responseBuilder
-      .speak(i18n.t(Strings.ERROR_MSG))
+      .speak(i18n.t('ERROR_MSG'))
       .getResponse();
   },
 };

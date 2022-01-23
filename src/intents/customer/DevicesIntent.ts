@@ -6,16 +6,20 @@ import { SessionService } from '../../services/SessionService';
 import { CustomerService } from '../../services/CustomerService';
 import { StorageService } from '../../services/StorageService';
 
-export const CustomerIntent: RequestHandler = {
+export const DevicesIntent: RequestHandler = {
   canHandle(handlerInput: HandlerInput) {
-    return IsIntent(handlerInput, IntentTypes.CustomerIntent);
+    return IsIntent(handlerInput, IntentTypes.DevicesIntent);
   },
 
   async handle(handlerInput: HandlerInput) {
     const session = new SessionService(handlerInput);
     const storage = new StorageService(handlerInput);
+    const cusService = new CustomerService(handlerInput);
+
+    cusService.getDevices();
     let customer:any = await storage.get('customer');
-    let speechText = 'Hi ' + customer.name + ' !';
+
+    let speechText = 'The last location of your devices is ' + customer.name + ' !';
     console.log('STORAGE CUSTOMER', customer);
 
     return handlerInput.responseBuilder

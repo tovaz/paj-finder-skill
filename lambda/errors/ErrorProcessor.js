@@ -4,7 +4,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ErrorProcessor = void 0;
-const constants_1 = require("../utilities/constants");
 const i18next_1 = __importDefault(require("i18next"));
 /**
  * Handles ErrorTypes.Unexpected errors which should be thrown when something
@@ -17,7 +16,7 @@ exports.ErrorProcessor = {
     handle(handlerInput, error) {
         console.log('Error handled: ${error.message}');
         return handlerInput.responseBuilder
-            .speak(i18next_1.default.t(constants_1.Strings.ERROR_MSG))
+            .speak(i18next_1.default.t('ERROR_MSG'))
             .getResponse();
     },
 };
