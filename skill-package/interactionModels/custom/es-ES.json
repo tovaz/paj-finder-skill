@@ -39,10 +39,7 @@
           "slots": [
               {
                   "name": "DEVICE_NAME",
-                  "type": "AMAZON.Book",
-                  "multipleValues": {
-                      "enabled": true
-                  }
+                  "type": "AMAZON.Book"
               }
           ],
           "samples": [
