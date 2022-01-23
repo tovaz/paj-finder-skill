@@ -8,6 +8,7 @@ const IntentHelper_1 = require("../../utilities/IntentHelper");
 const Types_1 = require("../../utilities/Types");
 const i18next_1 = __importDefault(require("i18next"));
 const SessionService_1 = require("../../services/SessionService");
+const CustomerService_1 = require("../../services/CustomerService");
 const StorageService_1 = require("../../services/StorageService");
 exports.DevicesIntent = {
     canHandle(handlerInput) {
@@ -16,8 +17,8 @@ exports.DevicesIntent = {
     async handle(handlerInput) {
         const session = new SessionService_1.SessionService(handlerInput);
         const storage = new StorageService_1.StorageService(handlerInput);
-        // const cusService = new CustomerService(handlerInput);
-        // cusService.getDevices();
+        const cusService = new CustomerService_1.CustomerService(handlerInput);
+        cusService.getDevices();
         let customer = await storage.get('customer');
         let speechText = 'The last location of your devices is ' + customer.name + ' !';
         console.log('STORAGE CUSTOMER', customer);
