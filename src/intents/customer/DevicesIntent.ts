@@ -14,9 +14,9 @@ export const DevicesIntent: RequestHandler = {
   async handle(handlerInput: HandlerInput) {
     const session = new SessionService(handlerInput);
     const storage = new StorageService(handlerInput);
-    const cusService = new CustomerService(handlerInput);
+    // const cusService = new CustomerService(handlerInput);
 
-    cusService.getDevices();
+    // cusService.getDevices();
     let customer:any = await storage.get('customer');
 
     let speechText = 'The last location of your devices is ' + customer.name + ' !';

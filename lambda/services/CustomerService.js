@@ -17,7 +17,7 @@ class CustomerService extends HttpHelper_1.HttpHelper {
         });
     }
     async getDevices() {
-        return await axios.post('/api/device').then((res) => {
+        return await axios.get('/api/device').then((res) => {
             console.log('DEVICES RESPONSED');
             console.log(res);
             if (res.status == 200)

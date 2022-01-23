@@ -22,7 +22,7 @@ export class CustomerService extends HttpHelper{
     }
 
     public async getDevices(){
-        return await axios.post('/api/device').then( (res:any) => {
+        return await axios.get('/api/device').then( (res:any) => {
             console.log('DEVICES RESPONSED');
             console.log(res);
             if (res.status == 200)
