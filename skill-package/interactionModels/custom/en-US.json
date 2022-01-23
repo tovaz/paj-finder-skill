@@ -35,6 +35,13 @@
           ]
         },
         {
+          "name": "DeviceIntent",
+          "slots": [],
+          "samples": [
+            "where is my "
+          ]
+        },
+        {
           "name": "AMAZON.NavigateHomeIntent",
           "samples": []
         },
