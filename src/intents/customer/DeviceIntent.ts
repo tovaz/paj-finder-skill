@@ -1,3 +1,4 @@
+import * as Alexa from 'ask-sdk-core';
 import { RequestHandler, HandlerInput } from 'ask-sdk-core';
 import { IsIntent } from '../../utilities/IntentHelper';
 import { IntentTypes } from '../../utilities/Types';
@@ -19,7 +20,8 @@ export const DeviceIntent: RequestHandler = {
     const devices = await cusService.getDevices();
     let customer:any = await storage.get('customer');
     
-    const speechText = 'Your device is in';
+    const device = Alexa.getSlotValue(handlerInput.requestEnvelope, "DEVICE_NAME");
+    const speechText = 'Your device is ' + device;
     
     return handlerInput.responseBuilder
       .speak(speechText)
