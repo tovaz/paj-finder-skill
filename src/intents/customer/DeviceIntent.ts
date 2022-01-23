@@ -5,13 +5,8 @@ import i18n from 'i18next';
 import { SessionService } from '../../services/SessionService';
 import { CustomerService } from '../../services/CustomerService';
 import { StorageService } from '../../services/StorageService';
-import * as listTemplate from '../../views/devices-list.json';
-import * as sampleTemplate from '../../views/sample-apl.json';
-import * as sampleData from '../../views/sampleData.json';
 
-import { createDevicesDatasource } from '../../utilities/DatasourceHelper';
-
-export const DevicesIntent: RequestHandler = {
+export const DeviceIntent: RequestHandler = {
   canHandle(handlerInput: HandlerInput) {
     return IsIntent(handlerInput, IntentTypes.DevicesIntent);
   },
@@ -23,24 +18,12 @@ export const DevicesIntent: RequestHandler = {
 
     const devices = await cusService.getDevices();
     let customer:any = await storage.get('customer');
-
-    console.log('DEVICES');
-    console.log(devices);
-    let speechText = 'The last location of your devices is ' + customer.name + ' !';
-    const datasource = createDevicesDatasource(devices);
-
-    console.log('HDS - LIST');
-    console.log({ sampleTemplate, sampleData });
+    
+    const speechText = 'Your device is in';
     
     return handlerInput.responseBuilder
       .speak(speechText)
       .withSimpleCard(i18n.t('SKILL_NAME'), speechText)
-      .reprompt('What device do you want to select')
-      .addDirective({
-        type: 'Alexa.Presentation.APL.RenderDocument',
-        document: sampleTemplate,
-        datasources: sampleData
-     })
       .withShouldEndSession(false)
       .getResponse();
   },

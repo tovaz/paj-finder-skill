@@ -30,7 +30,7 @@ exports.createDevicesDatasource = (devices) => {
         //         type: 'SetValue',
         //         componentId: 'DevicesList',
         //         property: 'headerTitle',
-        //         value: "${payload.DevicesSource.data[0].primaryText} is selected"
+        //         value: "${payload.data[0].primaryText} is selected"
         //     }
         // ]
         source.data.push(item);

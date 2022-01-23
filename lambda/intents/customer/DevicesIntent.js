@@ -18,14 +18,19 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DevicesIntent = void 0;
 const IntentHelper_1 = require("../../utilities/IntentHelper");
 const Types_1 = require("../../utilities/Types");
+const i18next_1 = __importDefault(require("i18next"));
 const SessionService_1 = require("../../services/SessionService");
 const CustomerService_1 = require("../../services/CustomerService");
 const StorageService_1 = require("../../services/StorageService");
-const listTemplate = __importStar(require("../../views/devices-list.json"));
+const sampleTemplate = __importStar(require("../../views/sample-apl.json"));
+const sampleData = __importStar(require("../../views/sampleData.json"));
 const DatasourceHelper_1 = require("../../utilities/DatasourceHelper");
 exports.DevicesIntent = {
     canHandle(handlerInput) {
@@ -41,16 +46,16 @@ exports.DevicesIntent = {
         console.log(devices);
         let speechText = 'The last location of your devices is ' + customer.name + ' !';
         const datasource = DatasourceHelper_1.createDevicesDatasource(devices);
-        console.log('LIST');
-        console.log({ listTemplate, datasource });
+        console.log('HDS - LIST');
+        console.log({ sampleTemplate, sampleData });
         return handlerInput.responseBuilder
             .speak(speechText)
-            //.withSimpleCard(i18n.t('SKILL_NAME'), speechText)
+            .withSimpleCard(i18next_1.default.t('SKILL_NAME'), speechText)
             .reprompt('What device do you want to select')
             .addDirective({
             type: 'Alexa.Presentation.APL.RenderDocument',
-            document: listTemplate,
-            datasources: datasource
+            document: sampleTemplate,
+            datasources: sampleData
         })
             .withShouldEndSession(false)
             .getResponse();

@@ -1,7 +1,8 @@
  {
-    "WELCOME_MSG": "Welcome to paj finder skill",
+    "SKILL_NAME": "Paj finder skill",
+    "WELCOME_MSG": "Welcome to paj finder skill !",
     "HELLO_MSG": "Hello World!",
-    "HELP_MSG": "You can say hello to me! How can I help?",
+    "HELP_MSG": "You can say where is my [device name]. \nOr what is the last location of my [device name]",
     "GOODBYE_MSG": "Goodbye!",
     "REFLECTOR_MSG": "You just triggered {{intent}}",
     "FALLBACK_MSG": "Sorry, I don\"t know about that. Please try again.",

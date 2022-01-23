@@ -10,6 +10,7 @@ import { SessionEnded } from './intents/default/SessionEnded';
 import { LocalizationRequestInterceptor } from './interceptors/LocalizationRequestInterceptor';
 import { SessionRequestInterceptor } from './interceptors/SessionRequestInterceptor';
 import { DevicesIntent } from './intents/customer/DevicesIntent';
+import { DeviceIntent } from './intents/customer/DeviceIntent';
 //_ Enable to use dynamon db
 //import { PersistentAdapter } from './services/StorageService';
 
@@ -21,6 +22,7 @@ export const handler = Alexa.SkillBuilders.custom()
     Launch,
     CustomerIntent,
     DevicesIntent,
+    DeviceIntent,
     Help,
     Stop,
     SessionEnded,
