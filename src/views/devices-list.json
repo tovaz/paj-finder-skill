@@ -1,0 +1,31 @@
+{
+    "type": "APL",
+    "version": "1.8",
+    "license": "Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/",
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.5.0"
+        }
+    ],
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "AlexaTextList",
+                "headerTitle": "${payload.title}",
+                "headerBackButton": true,
+                "headerAttributionImage": "https://v2.finder-portal.com/assets/brand/img/logo_main.png",
+                "backgroundImageSource": "https://v2.finder-portal.com/splash.c14ccebbb9021c4c63ff.jpg",
+                "listItems": "${payload.data}",
+                "touchForward": true,
+                "backgroundBlur": true,
+                "backgroundColorOverlay": true,
+                "id": "DevicesList"
+            }
+        ]
+    }
+}
