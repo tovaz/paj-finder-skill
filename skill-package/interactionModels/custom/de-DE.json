@@ -1,64 +1,131 @@
 {
   "interactionModel": {
-    "languageModel": {
-      "invocationName": "paj finder skill",
-      "intents": [
-        {
-          "name": "AMAZON.CancelIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.HelpIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.StopIntent",
-          "samples": []
-        },
-        {
-          "name": "CustomerIntent",
-          "slots": [],
-          "samples": [
-            "hello",
-            "hi"
-          ]
-        },
-        {
-          "name": "DevicesIntent",
-          "slots": [],
-          "samples": [
-            "show my devices",
-            "my devices",
-            "where are my devices",
-            "what is the last location of my devices",
-            "last locations"
-          ]
-        },
-        {
-          "name": "DeviceIntent",
-          "slots": [
+      "languageModel": {
+          "invocationName": "paj finder skill",
+          "intents": [
               {
-                  "name": "DEVICE_NAME",
-                  "type": "AMAZON.Book"
+                  "name": "AMAZON.CancelIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.HelpIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.StopIntent",
+                  "samples": []
+              },
+              {
+                  "name": "CustomerIntent",
+                  "slots": [],
+                  "samples": [
+                      "hello",
+                      "hi"
+                  ]
+              },
+              {
+                  "name": "DevicesIntent",
+                  "slots": [],
+                  "samples": [
+                      "show my devices",
+                      "my devices",
+                      "where are my devices",
+                      "what is the last location of my devices",
+                      "last locations"
+                  ]
+              },
+              {
+                  "name": "DeviceIntent",
+                  "slots": [
+                      {
+                          "name": "DEVICE_NAME",
+                          "type": "DEVICES_NAME"
+                      }
+                  ],
+                  "samples": [
+                      "what is the last location of {DEVICE_NAME}",
+                      "last location of {DEVICE_NAME}",
+                      "where is {DEVICE_NAME}"
+                  ]
+              },
+              {
+                  "name": "AMAZON.NavigateHomeIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.FallbackIntent",
+                  "samples": []
               }
           ],
-          "samples": [
-              "last location of {DEVICE_NAME}",
-              "what is the last location of {DEVICE_NAME}",
-              "where is {DEVICE_NAME}"
+          "types": [
+              {
+                  "name": "DEVICES_NAME",
+                  "values": [
+                      {
+                          "name": {
+                              "value": "audi"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "bmw"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "toyota"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "son"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "mon"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "dad"
+                          }
+                      }
+                  ]
+              }
           ]
-        },
-        {
-          "name": "AMAZON.NavigateHomeIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.FallbackIntent",
-          "samples": []
-        }
-      ],
-      "types": []
-    }
-  },
-  "version": "1"
+      },
+      "dialog": {
+          "intents": [
+              {
+                  "name": "DeviceIntent",
+                  "confirmationRequired": false,
+                  "prompts": {},
+                  "slots": [
+                      {
+                          "name": "DEVICE_NAME",
+                          "type": "DEVICES_NAME",
+                          "confirmationRequired": false,
+                          "elicitationRequired": true,
+                          "prompts": {
+                              "elicitation": "Elicit.Slot.1338433453597.849987221300"
+                          }
+                      }
+                  ]
+              }
+          ],
+          "delegationStrategy": "ALWAYS"
+      },
+      "prompts": [
+          {
+              "id": "Elicit.Slot.1338433453597.849987221300",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "Please say the name of yor finder device"
+                  }
+              ]
+          }
+      ]
+  }
 }
