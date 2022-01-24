@@ -12,7 +12,7 @@ exports.Help = {
         return IntentHelper_1.IsIntent(handlerInput, Types_1.IntentTypes.Help);
     },
     handle(handlerInput) {
-        const speechText = i18next_1.default.t('HELP_MSG');
+        const speechText = i18next_1.default.t('Alexa.Help');
         return handlerInput.responseBuilder
             .speak(speechText)
             .reprompt(speechText)

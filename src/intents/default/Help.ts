@@ -8,7 +8,7 @@ export const Help: RequestHandler = {
     return IsIntent(handlerInput, IntentTypes.Help);
   },
   handle(handlerInput: HandlerInput) {
-    const speechText = i18n.t('HELP_MSG');
+    const speechText = i18n.t('Alexa.Help');
 
     return handlerInput.responseBuilder
       .speak(speechText)
