@@ -23,8 +23,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DevicesIntent = void 0;
-const IntentHelper_1 = require("../../utilities/IntentHelper");
-const Types_1 = require("../../utilities/Types");
+const IntentHelper_1 = require("../../utils/IntentHelper");
+const Types_1 = require("../../utils/Types");
 const i18next_1 = __importDefault(require("i18next"));
 const SessionService_1 = require("../../services/SessionService");
 const CustomerService_1 = require("../../services/CustomerService");
@@ -32,7 +32,7 @@ const StorageService_1 = require("../../services/StorageService");
 const listTemplate = __importStar(require("../../views/devices-list.json"));
 const sampleTemplate = __importStar(require("../../views/sample-apl.json"));
 const sampleData = __importStar(require("../../views/sampleData.json"));
-const DatasourceHelper_1 = require("../../utilities/DatasourceHelper");
+const DatasourceHelper_1 = require("../../utils/DatasourceHelper");
 exports.DevicesIntent = {
     canHandle(handlerInput) {
         return IntentHelper_1.IsIntent(handlerInput, Types_1.IntentTypes.DevicesIntent);

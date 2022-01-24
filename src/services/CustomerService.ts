@@ -1,6 +1,6 @@
 import { HandlerInput } from "ask-sdk-core";
 import { Session, User } from "ask-sdk-model";
-import { HttpHelper } from "../utilities/HttpHelper";
+import { HttpHelper } from "../utils/HttpHelper";
 import { ENV } from './../environments/environment';
 import { SessionService } from "./SessionService";
 

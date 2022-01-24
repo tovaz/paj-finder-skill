@@ -1,10 +1,10 @@
 import { CustomerService } from '../../services/CustomerService';
 import { StorageService } from '../../services/StorageService';
 import { RequestHandler, HandlerInput } from 'ask-sdk-core';
-import { RequestTypes } from '../../utilities/Types';
-import { IsType } from '../../utilities/IntentHelper';
+import { RequestTypes } from '../../utils/Types';
+import { IsType } from '../../utils/IntentHelper';
 import i18n from 'i18next';
-import { createDeviceNameSlots } from '../../utilities/SlotsHelper';
+import { createDeviceNameSlots } from '../../utils/SlotsHelper';
 import { Directive } from 'ask-sdk-model';
 
 export const Launch: RequestHandler = {

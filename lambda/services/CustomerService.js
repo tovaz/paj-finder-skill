@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CustomerService = void 0;
-const HttpHelper_1 = require("../utilities/HttpHelper");
+const HttpHelper_1 = require("../utils/HttpHelper");
 const axios = require('axios').default;
 class CustomerService extends HttpHelper_1.HttpHelper {
     constructor(hi) {

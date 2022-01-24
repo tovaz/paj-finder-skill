@@ -1,12 +1,12 @@
 import * as Alexa from 'ask-sdk-core';
 import { RequestHandler, HandlerInput } from 'ask-sdk-core';
-import { IsIntent } from '../../utilities/IntentHelper';
-import { IntentTypes } from '../../utilities/Types';
+import { IsIntent } from '../../utils/IntentHelper';
+import { IntentTypes } from '../../utils/Types';
 import i18n from 'i18next';
 import { SessionService } from '../../services/SessionService';
 import { CustomerService } from '../../services/CustomerService';
 import { StorageService } from '../../services/StorageService';
-import { getLogbookAddress } from '../../utilities/AddressHelper';
+import { getLogbookAddress } from '../../utils/AddressHelper';
 
 export const DeviceIntent: RequestHandler = {
   canHandle(handlerInput: HandlerInput) {

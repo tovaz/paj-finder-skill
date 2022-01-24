@@ -6,10 +6,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Launch = void 0;
 const CustomerService_1 = require("../../services/CustomerService");
 const StorageService_1 = require("../../services/StorageService");
-const Types_1 = require("../../utilities/Types");
-const IntentHelper_1 = require("../../utilities/IntentHelper");
+const Types_1 = require("../../utils/Types");
+const IntentHelper_1 = require("../../utils/IntentHelper");
 const i18next_1 = __importDefault(require("i18next"));
-const SlotsHelper_1 = require("../../utilities/SlotsHelper");
+const SlotsHelper_1 = require("../../utils/SlotsHelper");
 exports.Launch = {
     canHandle(handlerInput) {
         return IntentHelper_1.IsType(handlerInput, Types_1.RequestTypes.Launch);

@@ -1,6 +1,6 @@
 import { RequestHandler, HandlerInput } from 'ask-sdk-core';
-import { IsIntent } from '../../utilities/IntentHelper';
-import { IntentTypes } from '../../utilities/Types';
+import { IsIntent } from '../../utils/IntentHelper';
+import { IntentTypes } from '../../utils/Types';
 import i18n from 'i18next';
 import { SessionService } from '../../services/SessionService';
 import { CustomerService } from '../../services/CustomerService';
@@ -9,7 +9,7 @@ import * as listTemplate from '../../views/devices-list.json';
 import * as sampleTemplate from '../../views/sample-apl.json';
 import * as sampleData from '../../views/sampleData.json';
 
-import { createDevicesDatasource } from '../../utilities/DatasourceHelper';
+import { createDevicesDatasource } from '../../utils/DatasourceHelper';
 
 export const DevicesIntent: RequestHandler = {
   canHandle(handlerInput: HandlerInput) {

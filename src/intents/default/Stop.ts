@@ -1,6 +1,6 @@
 import { RequestHandler, HandlerInput } from 'ask-sdk-core';
-import { IntentTypes } from '../../utilities/Types';
-import { IsIntent } from '../../utilities/IntentHelper';
+import { IntentTypes } from '../../utils/Types';
+import { IsIntent } from '../../utils/IntentHelper';
 import i18n from 'i18next';
 
 export const Stop: RequestHandler = {

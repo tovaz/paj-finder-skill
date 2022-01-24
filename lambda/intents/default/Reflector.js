@@ -5,8 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Reflector = void 0;
 const ask_sdk_core_1 = require("ask-sdk-core");
-const IntentHelper_1 = require("../../utilities/IntentHelper");
-const Types_1 = require("../../utilities/Types");
+const IntentHelper_1 = require("../../utils/IntentHelper");
+const Types_1 = require("../../utils/Types");
 const i18next_1 = __importDefault(require("i18next"));
 exports.Reflector = {
     canHandle(handlerInput) {
