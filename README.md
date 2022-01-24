@@ -127,7 +127,8 @@ This command will execute these actions:
 
 As you can see, this process in a TypeScript environment is more complex than in JavaScript one.
 
-## **VERY HELPULL if you dont know how to debug node apps using Visual Studio Code**
+## **VERY HELPFUL** 
+## If you dont know how to debug node apps using Visual Studio Code
 
 ## Running the Skill with Visual Studio Code
 
@@ -173,7 +174,5 @@ The response from the lambda handler is parsed as a HTTP 200 message format as s
 The response is written onto the socket connection and returned.
 
 After configuring our launch.json file and understanding how the local debugger works, it is time to click on the play button:
-
-![image](img/run.png)
 
 After executing it, you can send Alexa POST requests to http://localhost:3001.
