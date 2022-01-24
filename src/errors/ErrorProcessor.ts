@@ -13,7 +13,7 @@ export const ErrorProcessor: ErrorHandler = {
     console.log('Error handled: ${error.message}');
 
     return handlerInput.responseBuilder
-      .speak(i18n.t('ERROR_MSG'))
+      .speak(i18n.t('Alexa.Error'))
       .getResponse();
   },
 };

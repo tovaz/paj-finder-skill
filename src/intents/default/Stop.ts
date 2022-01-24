@@ -8,7 +8,7 @@ export const Stop: RequestHandler = {
     return IsIntent(handlerInput, IntentTypes.Stop, IntentTypes.Cancel);
   },
   handle(handlerInput: HandlerInput) {
-    const speechText = i18n.t('GOODBYE_MSG');
+    const speechText = i18n.t('Alexa.Goodbye');
 
     return handlerInput.responseBuilder
       .speak(speechText)

@@ -12,7 +12,7 @@ exports.SessionEnded = {
         return IntentHelper_1.IsType(handlerInput, Types_1.RequestTypes.SessionEnded);
     },
     handle(handlerInput) {
-        const speechText = i18next_1.default.t('GOODBYE_MSG');
+        const speechText = i18next_1.default.t('Alexa.Goodbye');
         return handlerInput.responseBuilder
             .speak(speechText)
             .withSimpleCard(i18next_1.default.t('SKILL_NAME'), speechText)

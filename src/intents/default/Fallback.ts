@@ -8,11 +8,11 @@ export const Fallback: RequestHandler = {
     return IsIntent(handlerInput, IntentTypes.Fallback);
   },
   handle(handlerInput: HandlerInput) {
-    const speechText = i18n.t('ERROR_MSG');
+    const speechText = i18n.t('Alexa.Error');
 
     return handlerInput.responseBuilder
       .speak(speechText)
-      .reprompt(i18n.t('HELP_MSG'))
+      .reprompt(i18n.t('Alexa.Help'))
       .getResponse();
   },
 };

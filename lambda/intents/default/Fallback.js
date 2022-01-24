@@ -12,10 +12,10 @@ exports.Fallback = {
         return IntentHelper_1.IsIntent(handlerInput, Types_1.IntentTypes.Fallback);
     },
     handle(handlerInput) {
-        const speechText = i18next_1.default.t('ERROR_MSG');
+        const speechText = i18next_1.default.t('Alexa.Error');
         return handlerInput.responseBuilder
             .speak(speechText)
-            .reprompt(i18next_1.default.t('HELP_MSG'))
+            .reprompt(i18next_1.default.t('Alexa.Help'))
             .getResponse();
     },
 };

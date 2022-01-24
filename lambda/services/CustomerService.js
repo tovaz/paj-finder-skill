@@ -18,7 +18,6 @@ class CustomerService extends HttpHelper_1.HttpHelper {
     }
     async getDevices() {
         return axios.get('/api/device').then((res) => {
-            console.log('DEVICES RESPONSED');
             console.log(res);
             if (res.status === 200)
                 return res.data.success;
@@ -31,8 +30,8 @@ class CustomerService extends HttpHelper_1.HttpHelper {
             deviceIDs: listofIDs
         };
         return axios.post('/api/trackerdata/getalllastpositions', postData).then((res) => {
-            console.log('LAST LOCATION RESPONSED');
-            console.log(res);
+            // console.log('LAST LOCATION RESPONSED');
+            // console.log(res);
             if (res.status === 200)
                 return res.data.success;
         }).catch((error) => {
@@ -45,8 +44,8 @@ class CustomerService extends HttpHelper_1.HttpHelper {
         const supportedLanguages = ['en', 'de', 'fr', 'it'];
         lang = supportedLanguages.includes(lang) ? '&lang=' + lang : '';
         return axios.get('/api/reverse/geocoding?lat=' + lat + '&lon=' + lng + lang).then((res) => {
-            console.log('LOCATION RESPONSE');
-            console.log(res);
+            // console.log('LOCATION RESPONSE');
+            // console.log(res);
             if (res.status === 200)
                 return res.data.success;
         }).catch((error) => {

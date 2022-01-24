@@ -8,13 +8,12 @@ export const Reflector: RequestHandler = {
     return IsType(handlerInput, RequestTypes.Intent);
   },
   handle(handlerInput: HandlerInput) {
-    const speechText = i18n.t('REFLECTOR_MSG', {
-      intentName: getIntentName(handlerInput.requestEnvelope),
-    });
+    const speechText = i18n.t('Alexa.NoIntentHandled');
 
     return handlerInput.responseBuilder
       .speak(speechText)
       .withSimpleCard(i18n.t('SKILL_NAME'), speechText)
+      .withShouldEndSession(false)
       .getResponse();
   },
 };

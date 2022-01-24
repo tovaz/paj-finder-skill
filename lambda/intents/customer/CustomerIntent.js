@@ -17,7 +17,7 @@ exports.CustomerIntent = {
         const session = new SessionService_1.SessionService(handlerInput);
         const storage = new StorageService_1.StorageService(handlerInput);
         let customer = await storage.get('customer');
-        let speechText = 'Hi ' + customer.name + ' !';
+        let speechText = i18next_1.default.t('CustomerIntent.Hi') + ' ' + customer.name + ' !';
         console.log('STORAGE CUSTOMER', customer);
         return handlerInput.responseBuilder
             .speak(speechText)

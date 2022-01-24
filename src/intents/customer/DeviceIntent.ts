@@ -21,24 +21,32 @@ export const DeviceIntent: RequestHandler = {
     const devices = await cusService.getDevices();
     let customer:any = await storage.get('customer');
     
-    const inputName = Alexa.getSlotValue(handlerInput.requestEnvelope, "DEVICE_NAME");
-    const device = devices.find((d:any) => d.name.toLowerCase().startsWith(inputName))
+    console.log('UNDEFINED SLOT');
+    console.log(Alexa.getSlotValue(handlerInput.requestEnvelope, "DEVICE_NAME"));
 
-    let speechText = 'I couldnt found your device, please can you reapeat your finder device name ?';
+    const inputName = Alexa.getSlotValue(handlerInput.requestEnvelope, "DEVICE_NAME");
+    let device = null;
+    console.log('INPUT NAME');
+    console.log(inputName);
+
+    if (inputName)
+      device = devices.find((d:any) => d.name.toLowerCase().startsWith(inputName))
+    
+    let speechText = i18n.t('DeviceIntent.SlotNotFound');
     let text = speechText;
     if (device){
         console.log('DEVICE');
         console.log(device);
         let lastLocation = await cusService.getLastPosition([device.id]);
-        if (lastLocation){
+        if (lastLocation.length > 0){
             lastLocation = lastLocation[0];
             let address:any = await cusService.getStreetAdrress(lastLocation.lat, lastLocation.lng);
             address = getLogbookAddress(address.features[0].properties);
-            speechText = 'The last location of ' + device.name + ' is <say-as interpret-as="address">' + address.address + '</say-as>';
-            text = 'The last location of ' + device.name + ' is ' + address.address;
+            speechText = i18n.t('DeviceIntent.LastLocation', { values: { DEVICE: device.name } }) + ' <say-as interpret-as="address">' + address.address + '</say-as>';
+            text = i18n.t('DeviceIntent.LastLocation', { values: { DEVICE: device.name } }) +address.address;
         }
         else{
-            speechText = 'Sorry we cant find last location for ' + device.name;
+            speechText = i18n.t('DeviceIntent.CantFindLocation', { values: { DEVICE: device.name } });
             text = speechText;
         }
 

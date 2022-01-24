@@ -15,7 +15,7 @@ export const CustomerIntent: RequestHandler = {
     const session = new SessionService(handlerInput);
     const storage = new StorageService(handlerInput);
     let customer:any = await storage.get('customer');
-    let speechText = 'Hi ' + customer.name + ' !';
+    let speechText = i18n.t('CustomerIntent.Hi') + ' ' + customer.name + ' !';
     console.log('STORAGE CUSTOMER', customer);
 
     return handlerInput.responseBuilder

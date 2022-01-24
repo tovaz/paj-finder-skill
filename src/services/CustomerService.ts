@@ -23,7 +23,6 @@ export class CustomerService extends HttpHelper{
 
     async getDevices(){
         return axios.get('/api/device').then( (res:any) => {
-            console.log('DEVICES RESPONSED');
             console.log(res);
             if (res.status === 200) 
                 return res.data.success;
@@ -38,8 +37,8 @@ export class CustomerService extends HttpHelper{
         };
 
         return axios.post('/api/trackerdata/getalllastpositions', postData).then( (res:any) => {
-            console.log('LAST LOCATION RESPONSED');
-            console.log(res);
+            // console.log('LAST LOCATION RESPONSED');
+            // console.log(res);
             if (res.status === 200) 
                 return res.data.success;
         }).catch( (error:any) => {
@@ -54,8 +53,8 @@ export class CustomerService extends HttpHelper{
         lang = supportedLanguages.includes(lang) ? '&lang=' + lang : '';
     
         return axios.get('/api/reverse/geocoding?lat=' + lat + '&lon=' + lng + lang).then( (res:any) => {
-            console.log('LOCATION RESPONSE');
-            console.log(res);
+            // console.log('LOCATION RESPONSE');
+            // console.log(res);
             if (res.status === 200) 
                 return res.data.success;
         }).catch( (error:any) => {

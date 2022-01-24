@@ -16,7 +16,7 @@ exports.ErrorProcessor = {
     handle(handlerInput, error) {
         console.log('Error handled: ${error.message}');
         return handlerInput.responseBuilder
-            .speak(i18next_1.default.t('ERROR_MSG'))
+            .speak(i18next_1.default.t('Alexa.Error'))
             .getResponse();
     },
 };

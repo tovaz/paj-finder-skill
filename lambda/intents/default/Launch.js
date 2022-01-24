@@ -19,7 +19,7 @@ exports.Launch = {
         const storage = new StorageService_1.StorageService(handlerInput);
         //_ Storage customer data into session atributes
         const customer = await cusService.getCustomerData();
-        storage.save('customer', customer);
+        storage.save('customer', { id: customer.id, name: customer.name, email: customer.email });
         //_ Create custom slot values for device name used in Device Intent
         let devices = await cusService.getDevices();
         const slotDevices = SlotsHelper_1.createDeviceNameSlots(devices);
@@ -33,11 +33,12 @@ exports.Launch = {
                 }
             ]
         };
-        const speechText = i18next_1.default.t('WELCOME_MSG') + ' <break time="0.5s"/> ' + i18next_1.default.t('HELP_MSG');
+        const speechText = i18next_1.default.t('Alexa.Welcome') + ' <break time="0.5s"/> ' + i18next_1.default.t('Alexa.Help');
+        const welcomeText = i18next_1.default.t('Alexa.Welcome').replace('Pai', 'Paj'); //_ Change pai to paj :: used pai to speak like the brand name
         return handlerInput.responseBuilder
             .speak(speechText)
-            .reprompt(speechText)
-            .withStandardCard(i18next_1.default.t('WELCOME_MSG'), i18next_1.default.t('HELP_MSG'), 'https://v2.finder-portal.com/assets/brand/img/logo_main.png', 'https://v2dev.finder-portal.com/assets/brand/img/logo_main.png')
+            .reprompt(i18next_1.default.t('Alexa.Help'))
+            .withStandardCard(welcomeText, i18next_1.default.t('Alexa.Help'), 'https://v2.finder-portal.com/assets/brand/img/logo_main.png', 'https://v2dev.finder-portal.com/assets/brand/img/logo_main.png')
             .addDirective(SlotDirective)
             .getResponse();
     },
