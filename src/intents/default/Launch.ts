@@ -27,11 +27,11 @@ export const Launch: RequestHandler = {
       updateBehavior: "REPLACE",
       types: [
           {
-            "name": "Devices_Name",
-            "values": slotDevices
+              name: "DEVICES_NAME",
+              values: slotDevices
           }
-        ]
-      };
+      ]
+  };
     
     const speechText =  i18n.t('WELCOME_MSG') + ' <break time="0.5s"/> ' + i18n.t('HELP_MSG');
     

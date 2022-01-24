@@ -16,5 +16,6 @@ var IntentTypes;
     IntentTypes["Fallback"] = "AMAZON.FallbackIntent";
     IntentTypes["CustomerIntent"] = "CustomerIntent";
     IntentTypes["DevicesIntent"] = "DevicesIntent";
+    IntentTypes["DeviceIntent"] = "DeviceIntent";
 })(IntentTypes = exports.IntentTypes || (exports.IntentTypes = {}));
 //# sourceMappingURL=Types.js.map

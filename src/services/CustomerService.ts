@@ -31,4 +31,35 @@ export class CustomerService extends HttpHelper{
             console.log(error);
         });
     }
+
+    async getLastPosition(listofIDs: Array<any>){
+        const postData = {
+            deviceIDs: listofIDs
+        };
+
+        return axios.post('/api/trackerdata/getalllastpositions', postData).then( (res:any) => {
+            console.log('LAST LOCATION RESPONSED');
+            console.log(res);
+            if (res.status === 200) 
+                return res.data.success;
+        }).catch( (error:any) => {
+            console.log(error);
+        });
+    }
+
+    async getStreetAdrress(lat: any, lng: any) {
+        //_ Language support for reverse geocoding
+        let lang = 'en';
+        const supportedLanguages = ['en', 'de', 'fr', 'it'];
+        lang = supportedLanguages.includes(lang) ? '&lang=' + lang : '';
+    
+        return axios.get('/api/reverse/geocoding?lat=' + lat + '&lon=' + lng + lang).then( (res:any) => {
+            console.log('LOCATION RESPONSE');
+            console.log(res);
+            if (res.status === 200) 
+                return res.data.success;
+        }).catch( (error:any) => {
+            console.log(error);
+        });
+      }
 }

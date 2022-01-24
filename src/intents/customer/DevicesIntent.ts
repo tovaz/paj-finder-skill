@@ -38,8 +38,8 @@ export const DevicesIntent: RequestHandler = {
       .reprompt('What device do you want to select')
       .addDirective({
         type: 'Alexa.Presentation.APL.RenderDocument',
-        document: sampleTemplate,
-        datasources: sampleData
+        document: listTemplate,
+        datasources: datasource
      })
       .withShouldEndSession(false)
       .getResponse();

@@ -7,7 +7,7 @@ exports.createDeviceNameSlots = (devices) => {
             id: d.id,
             name: {
                 value: d.name,
-                synonyms: [d.id, d.imei]
+                synonyms: [d.id + '', d.imei + '', d.name]
             }
         };
     });

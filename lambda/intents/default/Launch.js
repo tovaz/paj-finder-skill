@@ -28,8 +28,8 @@ exports.Launch = {
             updateBehavior: "REPLACE",
             types: [
                 {
-                    "name": "Devices_Name",
-                    "values": slotDevices
+                    name: "DEVICES_NAME",
+                    values: slotDevices
                 }
             ]
         };

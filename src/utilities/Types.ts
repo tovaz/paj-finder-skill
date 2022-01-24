@@ -12,5 +12,6 @@ export enum IntentTypes {
   Cancel = 'AMAZON.CancelIntent',
   Fallback = 'AMAZON.FallbackIntent',
   CustomerIntent = 'CustomerIntent',
-  DevicesIntent = 'DevicesIntent'
+  DevicesIntent = 'DevicesIntent',
+  DeviceIntent = 'DeviceIntent'
 }

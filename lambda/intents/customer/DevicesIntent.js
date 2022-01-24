@@ -29,6 +29,7 @@ const i18next_1 = __importDefault(require("i18next"));
 const SessionService_1 = require("../../services/SessionService");
 const CustomerService_1 = require("../../services/CustomerService");
 const StorageService_1 = require("../../services/StorageService");
+const listTemplate = __importStar(require("../../views/devices-list.json"));
 const sampleTemplate = __importStar(require("../../views/sample-apl.json"));
 const sampleData = __importStar(require("../../views/sampleData.json"));
 const DatasourceHelper_1 = require("../../utilities/DatasourceHelper");
@@ -54,8 +55,8 @@ exports.DevicesIntent = {
             .reprompt('What device do you want to select')
             .addDirective({
             type: 'Alexa.Presentation.APL.RenderDocument',
-            document: sampleTemplate,
-            datasources: sampleData
+            document: listTemplate,
+            datasources: datasource
         })
             .withShouldEndSession(false)
             .getResponse();
