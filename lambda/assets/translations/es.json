@@ -9,7 +9,7 @@
         "Error": "Disculpa, hubo un error. Porfavor intenta de nuevo."
     },
     "CustomerIntent": {
-        "Hi": "Hi"
+        "Hi": "Hola"
     },
     "DeviceIntent": {
         "SlotUndefined": "No pude encontrar tu dispositivo, porfavor repite el nombre de tu dispositivo",

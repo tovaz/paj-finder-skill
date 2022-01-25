@@ -35,12 +35,15 @@ exports.Launch = {
         };
         const speechText = i18next_1.default.t('Alexa.Welcome') + ' <break time="0.5s"/> ' + i18next_1.default.t('Alexa.Help');
         const welcomeText = i18next_1.default.t('Alexa.Welcome').replace('Pai', 'Paj'); //_ Change pai to paj :: used pai to speak like the brand name
-        return handlerInput.responseBuilder
+        console.log('DATA', { speechText, welcomeText });
+        let response = handlerInput.responseBuilder
             .speak(speechText)
-            .reprompt(i18next_1.default.t('Alexa.Help'))
-            .withStandardCard(welcomeText, i18next_1.default.t('Alexa.Help'), 'https://v2.finder-portal.com/assets/brand/img/logo_main.png', 'https://v2dev.finder-portal.com/assets/brand/img/logo_main.png')
+            //.reprompt(i18n.t('Alexa.Help'))
+            .withStandardCard(welcomeText, i18next_1.default.t('Alexa.Help'), 'https://v2.finder-portal.com/assets/brand/img/logo_main.png')
             .addDirective(SlotDirective)
             .getResponse();
+        console.log('RESPONSE', response);
+        return response;
     },
 };
 //# sourceMappingURL=Launch.js.map

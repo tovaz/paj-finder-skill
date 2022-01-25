@@ -46,9 +46,10 @@
                       }
                   ],
                   "samples": [
-                      "last location of {DEVICE_NAME}",
-                      "what is the last location of {DEVICE_NAME}",
-                      "where is {DEVICE_NAME}"
+                      "Donde esta mi {DEVICE_NAME}",
+                      "Ultima localizacion de {DEVICE_NAME}",
+                      "Cual es la ultima localizacion de {DEVICE_NAME}",
+                      "Donde esta {DEVICE_NAME}"
                   ]
               },
               {

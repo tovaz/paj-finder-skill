@@ -33,7 +33,7 @@
         "en-US": {
           "description": "Sample Full Description",
           "examplePhrases": [
-            "Alexa open hello world",
+            "Alexa open Paj Finder Skill",
             "hello",
             "help"
           ],
@@ -44,9 +44,8 @@
         "es-ES": {
           "description": "Ejemplo descripcion",
           "examplePhrases": [
-            "Alexa open hello world",
-            "hello",
-            "help"
+            "Alexa abre Paj Finder Skill",
+            "Paj Finder Skill"
           ],
           "keywords": [],
           "name": "Paj finder skill",
@@ -55,9 +54,8 @@
         "de-DE": {
           "description": "Ejemplo descripcion",
           "examplePhrases": [
-            "Alexa open hello world",
-            "hello",
-            "help"
+            "Alexa offen Paj Finder Skill",
+            "Paj Finder Skill"
           ],
           "keywords": [],
           "name": "Paj finder skill",

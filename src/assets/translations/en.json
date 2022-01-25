@@ -10,7 +10,7 @@
     },
 
     "CustomerIntent": {
-        "Hi": "Hola"
+        "Hi": "Hi"
     },
     
     "DeviceIntent":{
