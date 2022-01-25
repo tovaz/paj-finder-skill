@@ -1,123 +1,125 @@
 {
   "interactionModel": {
-      "languageModel": {
-          "invocationName": "paj finder skill",
-          "intents": [
-              {
-                  "name": "AMAZON.CancelIntent",
-                  "samples": []
-              },
-              {
-                  "name": "AMAZON.HelpIntent",
-                  "samples": []
-              },
-              {
-                  "name": "AMAZON.StopIntent",
-                  "samples": []
-              },
-              {
-                  "name": "CustomerIntent",
-                  "slots": [],
-                  "samples": [
-                      "hello",
-                      "hi"
-                  ]
-              },
-              {
-                  "name": "DevicesIntent",
-                  "slots": [],
-                  "samples": [
-                      "show my devices",
-                      "my devices",
-                      "where are my devices",
-                      "what is the last location of my devices",
-                      "last locations"
-                  ]
-              },
-              {
-                  "name": "DeviceIntent",
-                  "slots": [
-                      {
-                          "name": "DEVICE_NAME",
-                          "type": "DEVICES_NAME",
-                          "samples": [
-                              "{DEVICE_NAME}"
-                          ]
-                      }
-                  ],
-                  "samples": [
-                      "Donde esta mi {DEVICE_NAME}",
-                      "Ultima localizacion de {DEVICE_NAME}",
-                      "Cual es la ultima localizacion de {DEVICE_NAME}",
-                      "Donde esta {DEVICE_NAME}"
-                  ]
-              },
-              {
-                  "name": "AMAZON.NavigateHomeIntent",
-                  "samples": []
-              },
-              {
-                  "name": "AMAZON.FallbackIntent",
-                  "samples": []
-              }
-          ],
-          "types": [
-              {
-                  "name": "DEVICES_NAME",
-                  "values": [
-                      {
-                          "name": {
-                              "value": "test2"
-                          }
-                      },
-                      {
-                          "name": {
-                              "value": "test1"
-                          }
-                      }
-                  ]
-              }
+    "languageModel": {
+      "invocationName": "paj finder skill",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "CustomerIntent",
+          "slots": [],
+          "samples": [
+            "Como estas",
+            "Hola",
+            "Hey"
           ]
-      },
-      "dialog": {
-          "intents": [
-              {
-                  "name": "DeviceIntent",
-                  "confirmationRequired": false,
-                  "prompts": {},
-                  "slots": [
-                      {
-                          "name": "DEVICE_NAME",
-                          "type": "DEVICES_NAME",
-                          "confirmationRequired": false,
-                          "elicitationRequired": true,
-                          "prompts": {
-                              "elicitation": "Elicit.Slot.229833167014.167098951618"
-                          }
-                      }
-                  ]
-              }
-          ],
-          "delegationStrategy": "ALWAYS"
-      },
-      "prompts": [
-          {
-              "id": "Elicit.Slot.229833167014.167098951618",
-              "variations": [
-                  {
-                      "type": "PlainText",
-                      "value": "Disculpa, no he entendido. Como se llama tu dispositivo ?"
-                  },
-                  {
-                      "type": "PlainText",
-                      "value": "Perdona no como se llama tu dispositivo ?"
-                  },
-                  {
-                      "type": "PlainText",
-                      "value": "Porfavor di el nombre de tu dispositivo"
-                  }
+        },
+        {
+          "name": "DevicesIntent",
+          "slots": [],
+          "samples": [
+            "show my devices",
+            "my devices",
+            "where are my devices",
+            "what is the last location of my devices",
+            "last locations"
+          ]
+        },
+        {
+          "name": "DeviceIntent",
+          "slots": [
+            {
+              "name": "DEVICE_NAME",
+              "type": "DEVICES_NAME",
+              "samples": [
+                "{DEVICE_NAME}"
               ]
-          }
+            }
+          ],
+          "samples": [
+            "Donde esta mi {DEVICE_NAME}",
+            "Ultima localizacion de {DEVICE_NAME}",
+            "Cual es la ultima localizacion de {DEVICE_NAME}",
+            "Donde esta {DEVICE_NAME}"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "test2"
+              }
+            },
+            {
+              "name": {
+                "value": "test1"
+              }
+            }
+          ],
+          "name": "DEVICES_NAME"
+        }
       ]
-  }
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "DeviceIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "DEVICE_NAME",
+              "type": "DEVICES_NAME",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.229833167014.167098951618"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.229833167014.167098951618",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Disculpa, no he entendido. Como se llama tu dispositivo ?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Perdona no como se llama tu dispositivo ?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Porfavor di el nombre de tu dispositivo"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "19"
 }
