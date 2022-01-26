@@ -1,6 +1,7 @@
+import { Directive } from "ask-sdk-model";
 
-export const createDeviceNameSlots = (devices: any) => {
-    return devices.map( (d:any) => {
+export const createDeviceNameSlots = (devices: any):Directive => {
+    const slots = devices.map( (d:any) => {
         return { 
             id: d.id, 
             name: { 
@@ -9,4 +10,15 @@ export const createDeviceNameSlots = (devices: any) => {
             } 
         };
       });
+
+    return {
+        type: "Dialog.UpdateDynamicEntities",
+        updateBehavior: "REPLACE",
+        types: [
+            {
+                name: "DEVICES_NAME",
+                values: slots
+            }
+        ]
+    };
 }

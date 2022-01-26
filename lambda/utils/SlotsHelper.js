@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createDeviceNameSlots = void 0;
 exports.createDeviceNameSlots = (devices) => {
-    return devices.map((d) => {
+    const slots = devices.map((d) => {
         return {
             id: d.id,
             name: {
@@ -11,5 +11,15 @@ exports.createDeviceNameSlots = (devices) => {
             }
         };
     });
+    return {
+        type: "Dialog.UpdateDynamicEntities",
+        updateBehavior: "REPLACE",
+        types: [
+            {
+                name: "DEVICES_NAME",
+                values: slots
+            }
+        ]
+    };
 };
 //# sourceMappingURL=SlotsHelper.js.map

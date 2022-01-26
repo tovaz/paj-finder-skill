@@ -26,8 +26,9 @@ export const handler = Alexa.SkillBuilders.custom()
     Help,
     Stop,
     SessionEnded,
-    Reflector,
-    Fallback
+    Fallback,
+    Reflector
+    
   )
   .addErrorHandlers(ErrorProcessor)
   .addRequestInterceptors(LocalizationRequestInterceptor, SessionRequestInterceptor )

@@ -38,7 +38,7 @@ const DeviceIntent_1 = require("./intents/customer/DeviceIntent");
 exports.handler = Alexa.SkillBuilders.custom()
     //_ Enable to use dynamon DB
     //.withPersistenceAdapter(PersistentAdapter)
-    .addRequestHandlers(Launch_1.Launch, CustomerIntent_1.CustomerIntent, DevicesIntent_1.DevicesIntent, DeviceIntent_1.DeviceIntent, Help_1.Help, Stop_1.Stop, SessionEnded_1.SessionEnded, Reflector_1.Reflector, Fallback_1.Fallback)
+    .addRequestHandlers(Launch_1.Launch, CustomerIntent_1.CustomerIntent, DevicesIntent_1.DevicesIntent, DeviceIntent_1.DeviceIntent, Help_1.Help, Stop_1.Stop, SessionEnded_1.SessionEnded, Fallback_1.Fallback, Reflector_1.Reflector)
     .addErrorHandlers(ErrorProcessor_1.ErrorProcessor)
     .addRequestInterceptors(LocalizationRequestInterceptor_1.LocalizationRequestInterceptor, SessionRequestInterceptor_1.SessionRequestInterceptor)
     .lambda();

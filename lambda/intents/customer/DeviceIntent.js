@@ -31,6 +31,7 @@ const SessionService_1 = require("../../services/SessionService");
 const CustomerService_1 = require("../../services/CustomerService");
 const StorageService_1 = require("../../services/StorageService");
 const AddressHelper_1 = require("../../utils/AddressHelper");
+const SlotsHelper_1 = require("../../utils/SlotsHelper");
 exports.DeviceIntent = {
     canHandle(handlerInput) {
         return IntentHelper_1.IsIntent(handlerInput, Types_1.IntentTypes.DeviceIntent);
@@ -59,11 +60,11 @@ exports.DeviceIntent = {
                 lastLocation = lastLocation[0];
                 let address = await cusService.getStreetAdrress(lastLocation.lat, lastLocation.lng);
                 address = AddressHelper_1.getLogbookAddress(address.features[0].properties);
-                speechText = i18next_1.default.t('DeviceIntent.LastLocation', { values: { DEVICE: device.name } }) + ' <say-as interpret-as="address">' + address.address + '</say-as>';
-                text = i18next_1.default.t('DeviceIntent.LastLocation', { values: { DEVICE: device.name } }) + address.address;
+                speechText = i18next_1.default.t('DeviceIntent.LastLocation', { DEVICE: device.name }) + ' <say-as interpret-as="address">' + address.address + '</say-as>';
+                text = i18next_1.default.t('DeviceIntent.LastLocation', { DEVICE: device.name }) + address.address;
             }
             else {
-                speechText = i18next_1.default.t('DeviceIntent.CantFindLocation', { values: { DEVICE: device.name } });
+                speechText = i18next_1.default.t('DeviceIntent.CantFindLocation', { DEVICE: device.name });
                 text = speechText;
             }
             return handlerInput.responseBuilder
@@ -73,11 +74,13 @@ exports.DeviceIntent = {
                 .getResponse();
         }
         else {
+            const slotDevices = SlotsHelper_1.createDeviceNameSlots(devices);
             return handlerInput.responseBuilder
                 .speak(speechText)
                 .reprompt(speechText)
                 .withSimpleCard(i18next_1.default.t('SKILL_NAME'), speechText)
                 .withShouldEndSession(false)
+                .addDirective(slotDevices)
                 .getResponse();
         }
     },

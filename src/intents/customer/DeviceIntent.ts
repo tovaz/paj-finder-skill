@@ -7,6 +7,7 @@ import { SessionService } from '../../services/SessionService';
 import { CustomerService } from '../../services/CustomerService';
 import { StorageService } from '../../services/StorageService';
 import { getLogbookAddress } from '../../utils/AddressHelper';
+import { createDeviceNameSlots } from '../../utils/SlotsHelper';
 
 export const DeviceIntent: RequestHandler = {
   canHandle(handlerInput: HandlerInput) {
@@ -42,11 +43,11 @@ export const DeviceIntent: RequestHandler = {
             lastLocation = lastLocation[0];
             let address:any = await cusService.getStreetAdrress(lastLocation.lat, lastLocation.lng);
             address = getLogbookAddress(address.features[0].properties);
-            speechText = i18n.t('DeviceIntent.LastLocation', { values: { DEVICE: device.name } }) + ' <say-as interpret-as="address">' + address.address + '</say-as>';
-            text = i18n.t('DeviceIntent.LastLocation', { values: { DEVICE: device.name } }) +address.address;
+            speechText = i18n.t('DeviceIntent.LastLocation', { DEVICE: device.name } ) + ' <say-as interpret-as="address">' + address.address + '</say-as>';
+            text = i18n.t('DeviceIntent.LastLocation', { DEVICE: device.name } ) + address.address;
         }
         else{
-            speechText = i18n.t('DeviceIntent.CantFindLocation', { values: { DEVICE: device.name } });
+            speechText = i18n.t('DeviceIntent.CantFindLocation', { DEVICE: device.name } );
             text = speechText;
         }
 
@@ -57,11 +58,13 @@ export const DeviceIntent: RequestHandler = {
         .getResponse();
     }  
     else{
+        const slotDevices = createDeviceNameSlots(devices);
         return handlerInput.responseBuilder
         .speak(speechText)
         .reprompt(speechText)
         .withSimpleCard(i18n.t('SKILL_NAME'), speechText)
         .withShouldEndSession(false)
+        .addDirective(slotDevices)
         .getResponse();
     }
 

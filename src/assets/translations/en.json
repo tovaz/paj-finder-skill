@@ -5,7 +5,7 @@
         "Help": "You can say where is [device name]. \nOr what is the last location of [device name]",
         "Welcome": "Welcome to Pai Finder Skill !",
         "Goodbye": "Goodbye",
-        "Fallback": "Sorry, I don\"t know about that. Please try again.",
+        "Fallback": "Sorry, I didn't understand that.",
         "Error": "Sorry, there was an error. Please try again."
     },
 
@@ -14,9 +14,9 @@
     },
     
     "DeviceIntent":{
-        "SlotUndefined": "I couldnt found your device, please can you reapeat your finder device name ?",
+        "SlotUndefined": "I couldnt find your device, please can you reapeat your finder device name ?",
         "LastLocation": "The last location of {DEVICE} is ",
-        "CantFindLocation": "Sorry we cant find last location of ",
-        "SlotNotFound": "I couldnt found your device, please can you reapeat your finder device name ?"
+        "CantFindLocation": "Sorry I cant find last location of ",
+        "SlotNotFound": "I couldn't find any device with that name."
     }
 }

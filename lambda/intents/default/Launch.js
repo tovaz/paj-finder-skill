@@ -23,16 +23,6 @@ exports.Launch = {
         //_ Create custom slot values for device name used in Device Intent
         let devices = await cusService.getDevices();
         const slotDevices = SlotsHelper_1.createDeviceNameSlots(devices);
-        const SlotDirective = {
-            type: "Dialog.UpdateDynamicEntities",
-            updateBehavior: "REPLACE",
-            types: [
-                {
-                    name: "DEVICES_NAME",
-                    values: slotDevices
-                }
-            ]
-        };
         const speechText = i18next_1.default.t('Alexa.Welcome') + ' <break time="0.5s"/> ' + i18next_1.default.t('Alexa.Help');
         const welcomeText = i18next_1.default.t('Alexa.Welcome').replace('Pai', 'Paj'); //_ Change pai to paj :: used pai to speak like the brand name
         console.log('DATA', { speechText, welcomeText });
@@ -40,7 +30,7 @@ exports.Launch = {
             .speak(speechText)
             .reprompt(i18next_1.default.t('Alexa.Help'))
             .withStandardCard(welcomeText, i18next_1.default.t('Alexa.Help'), 'https://v2.finder-portal.com/assets/brand/img/logo_main.png')
-            .addDirective(SlotDirective)
+            .addDirective(slotDevices)
             .getResponse();
         console.log('RESPONSE', response);
         return response;

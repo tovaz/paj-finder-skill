@@ -2,10 +2,10 @@
     "SKILL_NAME": "Paj Finder Skill",
     "Alexa": {
         "NoIntentHandled": "No te eh entendido, puedes intentar de nuevo o decir ayuda, para conocer lo que puedes preguntar me.",
-        "Help": "Puedes preguntarme ¿Donde esta [Nombre del dispositivo] ?. \nO ¿Cual es la ultima ubicacion de [Nombre del dispositivo] ?",
+        "Help": "Puedes preguntarme Donde esta [Nombre del dispositivo]. \nO Cual es la ultima ubicacion de [Nombre del dispositivo]",
         "Welcome": "Bienvenido a Pai Finder Skill !",
         "Goodbye": "Adios",
-        "Fallback": "Lo siento, no tengo este conocimiento aun, porfavor intenta de otravez.",
+        "Fallback": "Lo siento, no he entendido eso.",
         "Error": "Disculpa, hubo un error. Porfavor intenta de nuevo."
     },
     "CustomerIntent": {
@@ -13,8 +13,8 @@
     },
     "DeviceIntent": {
         "SlotUndefined": "No pude encontrar tu dispositivo, porfavor repite el nombre de tu dispositivo",
-        "LastLocation": "La ultima ubicacion de {DEVICE} es ",
-        "CantFindLocation": "Lo siento no pude encontrar la ultima ubicacion de {DEVICE}",
-        "SlotNotFound": "No pude encontrar tu dispositivo, porfavor repite el nombre de tu dispositivo ?"
+        "LastLocation": "La ultima ubicacion de {{DEVICE}} es ",
+        "CantFindLocation": "Lo siento no pude encontrar la ultima ubicacion de {{DEVICE}}",
+        "SlotNotFound": "No pude encontrar ningun dispositivo con ese nombre."
     }
 }
