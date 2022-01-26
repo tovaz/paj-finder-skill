@@ -38,7 +38,7 @@ exports.Launch = {
         console.log('DATA', { speechText, welcomeText });
         let response = handlerInput.responseBuilder
             .speak(speechText)
-            //.reprompt(i18n.t('Alexa.Help'))
+            .reprompt(i18next_1.default.t('Alexa.Help'))
             .withStandardCard(welcomeText, i18next_1.default.t('Alexa.Help'), 'https://v2.finder-portal.com/assets/brand/img/logo_main.png')
             .addDirective(SlotDirective)
             .getResponse();

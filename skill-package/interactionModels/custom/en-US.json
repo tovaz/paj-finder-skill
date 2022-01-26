@@ -72,26 +72,6 @@
               "name": {
                 "value": "bmw"
               }
-            },
-            {
-              "name": {
-                "value": "family"
-              }
-            },
-            {
-              "name": {
-                "value": "son"
-              }
-            },
-            {
-              "name": {
-                "value": "mon"
-              }
-            },
-            {
-              "name": {
-                "value": "dad"
-              }
             }
           ],
           "name": "DEVICES_NAME"
@@ -131,5 +111,5 @@
       }
     ]
   },
-  "version": "17"
+  "version": "19"
 }

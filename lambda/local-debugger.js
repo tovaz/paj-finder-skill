@@ -53,10 +53,10 @@ localDebugger.on('connection', (socket) => {
     console.log(`Connection from: ${socket.remoteAddress}:${socket.remotePort}`);
     socket.on('data', (data) => {
         const body = JSON.parse(data.toString().split(httpBodyDelimeter).pop());
-        console.log(`Request envelope: ${JSON.stringify(body)}`);
+        console.log('Request env', body);
         skillInvoker[lambdaHandlerName](body, null, (_invokeErr, response) => {
             response = JSON.stringify(response);
-            console.log(`Response envelope: ${response}`);
+            console.log('Response env: ', response);
             socket.write(`HTTP/1.1 200 OK${httpHeaderDelimeter}Content-Type: application/json;charset=UTF-8${httpHeaderDelimeter}Content-Length: ${response.length}${httpBodyDelimeter}${response}`);
         });
     });

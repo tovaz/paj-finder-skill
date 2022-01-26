@@ -1,10 +1,20 @@
 {
-    "SKILL_NAME": "Paj finder skill",
-    "WELCOME_MSG": "Welcome to paj finder skill de",
-    "HELLO_MSG": "Hello World!",
-    "HELP_MSG": "You can say hello to me! How can I help?",
-    "GOODBYE_MSG": "Goodbye!",
-    "REFLECTOR_MSG": "You just triggered {{intent}}",
-    "FALLBACK_MSG": "Sorry, I don\"t know about that. Please try again.",
-    "ERROR_MSG": "Sorry, there was an error. Please try again."
+    "SKILL_NAME": "Paj Finder Skill",
+    "Alexa": {
+        "NoIntentHandled": "I couldnt understand you, can you try again or say help to know what can you ask me.",
+        "Help": "You can say where is [device name]. \nOr what is the last location of [device name]",
+        "Welcome": "Welcome to Pai Finder Skill !",
+        "Goodbye": "Goodbye",
+        "Fallback": "Sorry, I don\"t know about that. Please try again.",
+        "Error": "Sorry, there was an error. Please try again."
+    },
+    "CustomerIntent": {
+        "Hi": "Hi"
+    },
+    "DeviceIntent": {
+        "SlotUndefined": "I couldnt found your device, please can you reapeat your finder device name ?",
+        "LastLocation": "The last location of {DEVICE} is ",
+        "CantFindLocation": "Sorry we cant find last location of ",
+        "SlotNotFound": "I couldnt found your device, please can you reapeat your finder device name ?"
+    }
 }
